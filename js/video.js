@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		console.log(video.volume);
 		volumeSpan.innerHTML = video.volume * 100 + '%';
 	});
-})
+});
 
 // referenced from https://stackoverflow.com/questions/71577271/how-would-i-make-a-volume-slider-in-html
 
