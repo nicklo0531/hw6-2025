@@ -87,14 +87,18 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 // Volume Slider
-document.querySelector("#slider").addEventListener("change", function(x) {
-	// console.log("Mute_Unmute");
+document.addEventListener('DOMContentLoaded', function(){
 	let video = document.getElementById('player1');
-	video.volume = x.currentTarget.value / 100;
-	console.log(video.volume);
 	let volumeSpan = document.getElementById('volume');
-	volumeSpan.innerHTML = video.volume * 100 + '%';
-});
+	volumeSpan.innerHTML = '100%';
+	document.querySelector("#slider").addEventListener("change", function(x) {
+		// console.log("Mute_Unmute");
+		video.volume = x.currentTarget.value / 100;
+		console.log(video.volume);
+		volumeSpan.innerHTML = video.volume * 100 + '%';
+	});
+})
+
 // referenced from https://stackoverflow.com/questions/71577271/how-would-i-make-a-volume-slider-in-html
 
 // Styled
