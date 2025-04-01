@@ -17,10 +17,12 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	// console.log("Play Video");
 	let video = document.getElementById('player1');
+	let volumeSpan = document.getElementById('volume');
 	if (video.paused) {
 		// console.log('Video accessed');
 		video.play();
 	}
+	volumeSpan.innerHTML = '100%';
 });
 
 // Pause Button
@@ -87,18 +89,26 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 // Volume Slider
-document.addEventListener('click', function(){
+// document.addEventListener('click', function(){
+// 	let video = document.getElementById('player1');
+// 	let volumeSpan = document.getElementById('volume');
+// 	volumeSpan.innerHTML = '100%';
+// 	console.log('100% shown');
+// 	document.querySelector("#slider").addEventListener("change", function(x) {
+// 		video.volume = x.currentTarget.value / 100;
+// 		console.log(video.volume);
+// 		volumeSpan.innerHTML = video.volume * 100 + '%';
+// 	});
+// });
+
+document.querySelector("#slider").addEventListener("change", function(x) {
 	let video = document.getElementById('player1');
 	let volumeSpan = document.getElementById('volume');
-	volumeSpan.innerHTML = '100%';
-	console.log('100% shown')
-	document.querySelector("#slider").addEventListener("change", function(x) {
-		// console.log("Mute_Unmute");
-		video.volume = x.currentTarget.value / 100;
-		console.log(video.volume);
-		volumeSpan.innerHTML = video.volume * 100 + '%';
-	});
+	video.volume = x.currentTarget.value / 100;
+	console.log(video.volume);
+	volumeSpan.innerHTML = video.volume * 100 + '%';
 });
+
 
 // referenced from https://stackoverflow.com/questions/71577271/how-would-i-make-a-volume-slider-in-html
 
