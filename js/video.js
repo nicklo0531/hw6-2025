@@ -1,6 +1,6 @@
 // https://nicklo0531.github.io/hw6-2025/
 
-var video;
+let video;
 
 // Page Load
 window.addEventListener("load", function() {
@@ -22,7 +22,8 @@ document.querySelector("#play").addEventListener("click", function() {
 		// console.log('Video accessed');
 		video.play();
 	}
-	volumeSpan.innerHTML = '100%';
+	// video.volume = this.value / 100;
+	volumeSpan.innerHTML = video.volume *100 + '%';
 });
 
 // Pause Button
@@ -104,9 +105,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("change", function(x) {
 	let video = document.getElementById('player1');
 	let volumeSpan = document.getElementById('volume');
+	// video.volume = x.currentTarget.value / 100;
 	video.volume = x.currentTarget.value / 100;
 	console.log(video.volume);
-	volumeSpan.innerHTML = video.volume * 100 + '%';
+	volumeSpan.innerHTML = video.volume *100 + '%';
 });
 
 
