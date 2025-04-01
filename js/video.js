@@ -87,10 +87,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 // Volume Slider
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('click', function(){
 	let video = document.getElementById('player1');
 	let volumeSpan = document.getElementById('volume');
 	volumeSpan.innerHTML = '100%';
+	console.log('100% shown')
 	document.querySelector("#slider").addEventListener("change", function(x) {
 		// console.log("Mute_Unmute");
 		video.volume = x.currentTarget.value / 100;
